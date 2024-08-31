@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(to right, #9b67e2, #7ed8f4, #f3a6d3);
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.enterprise{
+    height: 200px;
+    width: 150px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
