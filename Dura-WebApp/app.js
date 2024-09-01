@@ -1,19 +1,29 @@
-import OpenAI from "openai";
+const express = require('express');
+const axios = require('axios');
+const app = express();
+const port = 3000;
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+app.use(express.json());
+
+const OPENAI_API_KEY = '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';
+
+app.post('/ai-response', async (req, res) => {
+  try {
+    const response = await axios.post('https://api.openai.com/v1/engines/davinci-codex/completions', {
+      prompt: req.body.prompt,
+      max_tokens: 150
+    }, {
+      headers: {
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+    res.json(response.data.choices[0].text);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while fetching the AI response' });
+  }
 });
 
-
-const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
-        { role: "system", content: "You are a helpful assistant." },
-        {
-            role: "user",
-            content: "Write a haiku about recursion in programming.",
-        },
-    ],
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
-
-console.log(completion.choices[0].message);
