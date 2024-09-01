@@ -5,7 +5,7 @@ const port = 3000;
 
 app.use(express.json());
 
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = '';
 
 app.post('/ai-response', async (req, res) => {
   try {
