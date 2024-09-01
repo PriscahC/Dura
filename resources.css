@@ -1,0 +1,39 @@
+body {
+    background: linear-gradient(to right, #300f5e, #0a485b, #781750);
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.video{
+    height: 200px;
+    width: 150px;
+    margin: 5px;
+    background-color: white;
+    text-align: center;
+}
+.links i{
+    margin: 10px;
+    font-size: x-large;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: #9b67e2;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+  }
+.bb{
+    display: flex;
+}
